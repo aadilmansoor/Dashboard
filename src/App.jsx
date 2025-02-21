@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Navigate, Outlet, Route, Routes } from "react-router-dom";
 import { Box } from "@mui/material";
-import Sidebar from "./shared/sidebar/SideBar";
+import Sidebar from "./shared/sidebar/Sidebar";
 import Navbar from "./shared/navbar";
 import User from "./component/user/User";
 import Login from "./component/login/Login";
@@ -34,13 +34,11 @@ function IsLogged() {
 function App() {
   return (
     <Routes>
-    
       <Route element={<IsLogged />}>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
       </Route>
 
-    
       <Route element={<ProtectedRoute />}>
         <Route
           path="/*"
